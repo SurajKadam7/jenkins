@@ -1,0 +1,22 @@
+pipline {
+    agent any
+    triggers{
+        pollSCM '* * * * *'
+    }
+
+    stages {
+        stage('Build'){
+            steps{
+                echo "building .. "
+                sh '''
+                make docker-up -d
+                '''
+            }
+        }
+        stage("Done"){
+            steps{
+                echo "Success .. "
+            }
+        }
+    }
+}

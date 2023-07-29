@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  test-server-backend:
+    build: .
+    ports:
+      - 80:80
+
+    networks:
+      - "jenkin-test-backend-network"
+
+
+
