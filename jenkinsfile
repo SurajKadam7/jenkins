@@ -9,7 +9,7 @@ pipeline {
             steps{
                 echo "building .. "
                 sh '''
-                make docker-up
+                docker-compose up -d
                 '''
             }
         }
